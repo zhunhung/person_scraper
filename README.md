@@ -1,4 +1,4 @@
-# Project Title
+# Person Scrapper
 
 Given a name of a person, the scrapper will cross check against the following databases:
 
