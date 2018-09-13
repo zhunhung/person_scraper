@@ -11,7 +11,7 @@ Given a name of a person, the scraper will cross check against the following dat
 - [ ] Credit bureaus
 - [ ] Facebook
 - [ ] LinkedIn
-- [X] Twitters
+- [X] Twitter
 - [ ] Criminal Records
 - [ ] Court Records
 - [ ] Google
