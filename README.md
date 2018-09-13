@@ -1,6 +1,6 @@
-# Person Scrapper
+# Person Scraper
 
-Given a name of a person, the scrapper will cross check against the following databases:
+Given a name of a person, the scraper will cross check against the following databases:
 
 - [X] OFAC SDN
 - [X] The Panama Papers
