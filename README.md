@@ -26,7 +26,7 @@ The code runs on Python 3.X and these are the packages you need:
 
 ```
 pandas
-BeautifulSoup4
+beautifulsoup4
 urllib
 ```
 
