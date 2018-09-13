@@ -7,6 +7,7 @@ def checkCSL(name, folder):
     contents = urllib.request.urlopen(url).read()
     results = json.loads(contents)["results"]
     fileName = folder + '/' + name.replace(' ', '_') + '_CSL.json'
+    #TO-DO process the data dump
     with open(fileName, 'w') as outfile:
         json.dump(results, outfile)
     print("Found " + str(len(results)) + " matches in CSL")
