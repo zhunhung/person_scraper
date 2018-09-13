@@ -2,3 +2,5 @@ results/
 Scrap web.ipynb
 .ipynb_checkpoints/
 .idea/
+config_keys.py
+*.ipynb
