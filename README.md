@@ -1,1 +1,74 @@
-# person_scapper
+# Project Title
+
+Given a name of a person, the scrapper will cross check against the following databases:
+
+Checklist
+- [X] OFAC SDN
+- [X] The Panama Papers
+- [ ] UN Sanctions
+- [ ] US Sanctions
+- [ ] MAS Sanctions and Freezing of assets
+- [ ] PEP databases
+- [ ] Credit bureaus
+- [ ] Facebook
+- [ ] LinkedIn
+- [ ] Twitters
+- [ ] Criminal Records
+- [ ] Court Records
+- [ ] Google
+- [ ] FATF
+
+
+
+### Prerequisites
+
+The code runs on Python 3.X and these are the packages you need:
+
+pandas
+BeautifulSoup4
+urllib
+
+
+### Installing
+
+Install the following packages if you have not:
+
+```
+pip install pandas
+pip install urllib
+pip install beautifulsoup4
+```
+
+
+## Running the scrapper
+
+Here's an example if you want to scrape on "Osama Bin Laden"
+
+```
+python scrapper.py -n "Osama Bin Laden"
+```
+
+And the output will be something like this:
+```
+Checking for Osama Bin Laden...
+CSL check:
+Found 1 matches in CSL
+Panama Papers check:
+Found 0 matches in Panama Papers
+```
+
+The files can be found in the following folder
+```
+person-scrapper/
+|-- scrappers/
+|   |-- CSL.py
+|   |-- panama.py
+|
+|-- results/
+|   |-- Osama_Bin_Laden/
+|   |   |-- Osama_Bin_Laden_CSL.json
+|   |   |-- Osama_Bin_Laden_PanamaPapers.csv
+|
+|-- scrapper.py
+|-- README
+|-- .gitignore
