@@ -2,7 +2,6 @@
 
 Given a name of a person, the scrapper will cross check against the following databases:
 
-Checklist
 - [X] OFAC SDN
 - [X] The Panama Papers
 - [ ] UN Sanctions
