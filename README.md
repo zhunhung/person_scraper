@@ -40,7 +40,7 @@ pip install beautifulsoup4
 ```
 
 
-## Running the scrapper
+### Running the scrapper
 
 Here's an example if you want to scrape on "Osama Bin Laden"
 
