@@ -58,7 +58,7 @@ Panama Papers check:
 Found 0 matches in Panama Papers
 ```
 
-The files can be found in the following folder
+The search results can be found in the results/name folder
 ```
 person-scrapper/
 |-- scrappers/
