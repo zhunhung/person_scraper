@@ -8,6 +8,7 @@ Given a name of a person, the scraper will cross check against the following dat
 - [ ] US Sanctions
 - [ ] MAS Sanctions and Freezing of assets
 - [ ] PEP databases
+- [X] CIA Database
 - [ ] Credit bureaus
 - [ ] Facebook
 - [ ] LinkedIn
