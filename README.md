@@ -13,7 +13,7 @@ Given a name of a person, the scraper will cross check against the following dat
 - [ ] LinkedIn
 - [X] Twitter
 - [ ] Criminal Records
-- [ ] Court Records
+- [X] Court Records
 - [ ] Google
 - [ ] FATF
 
