@@ -28,6 +28,7 @@ The code runs on Python 3.X and these are the packages you need:
 pandas
 beautifulsoup4
 urllib
+python-linkedin
 ```
 
 ### Installing
@@ -38,6 +39,7 @@ Install the following packages if you have not:
 pip install pandas
 pip install urllib
 pip install beautifulsoup4
+pip install python-linkedin
 ```
 
 
