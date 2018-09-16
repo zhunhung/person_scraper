@@ -15,7 +15,7 @@ Given a name of a person, the scraper will cross check against the following dat
 - [X] Twitter
 - [ ] Criminal Records
 - [X] Court Records
-- [ ] Google
+- [X] Google
 - [ ] FATF
 
 
