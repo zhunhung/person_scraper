@@ -4,3 +4,4 @@ Scrap web.ipynb
 .idea/
 config_keys.py
 *.ipynb
+__pycache__/config_keys.cpython-36.pyc

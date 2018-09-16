@@ -47,7 +47,7 @@ def checkCIA(name, folder):
         results_table.to_csv(fileName, encoding='utf-8',header=True, index=False)
 
 
-## test checkCIA('Ashraf GHANI')
+#checkCIA('Ashraf GHANI', 'D:/Users/Zhun/Documents/Y4S1/BT4012/person_scraper')
 
 
     

@@ -1,15 +1,7 @@
-
-# coding: utf-8
-
-# In[1]:
-
 import urllib
 from bs4 import BeautifulSoup
 import pandas as pd
 import re
-
-
-# In[77]:
 
 def getStateCourtResults(name):
     
@@ -19,7 +11,7 @@ def getStateCourtResults(name):
     page = urllib.request.urlopen(stateCourt)
     soup = BeautifulSoup(page, 'html.parser')
     
-    table = html.find('table')
+    table = soup.find('table')
     contents = table.text.lower()
     
     if contents.find(name_lower)!= -1:
@@ -29,16 +21,11 @@ def getStateCourtResults(name):
     return name + ' NOT FOUND in State Court Records'
 
 
-# In[80]:
 
-### Test
-'''
-print(getStateCourtResults('kang CHI LOONG'))
-print(getStateCourtResults('PANG CHI KANG'))
-'''
+#print(getStateCourtResults('kang CHI LOONG'))
+#print(getStateCourtResults('PANG CHI KANG'))
 
 
-# In[ ]:
 
 
 
