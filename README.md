@@ -10,7 +10,7 @@ Given a name of a person, the scraper will cross check against the following dat
 - [ ] PEP databases
 - [X] CIA Database
 - [ ] Credit bureaus
-- [ ] Facebook
+- [X] Facebook
 - [ ] LinkedIn
 - [X] Twitter
 - [ ] Criminal Records
