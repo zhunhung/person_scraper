@@ -23,7 +23,6 @@ def getFBProfiles(name):
     data = pd.DataFrame({'Name':names, 'Link': links})
     return data
 
-    print(len(links))
 
         
 def checkFB(name,folder):   
