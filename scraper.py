@@ -1,6 +1,6 @@
 import argparse
 import os
-from scrapers import CSL, panama, twitter_scraper, google, cia_gov
+from scrapers import CSL, panama, twitter_scraper, google, cia_gov, reddit
 
 parser = argparse.ArgumentParser(description='Person Scrapper')
 requiredNamed = parser.add_argument_group('required named arguments')
@@ -19,10 +19,12 @@ def scrape(name):
     CSL.checkCSL(name, newFolder)
     print("Panama Papers check:")
     panama.checkPanama(name, newFolder)
-    print("CIA Gov check:")
-    cia_gov.checkCIA(name, newFolder)
+    # print("CIA Gov check:")
+    # cia_gov.checkCIA(name, newFolder)
     print("Twitter check:")
     twitter_scraper.checkTwitter(name, newFolder)
     print("Google check:")
     google.checkGoogle(name, newFolder)
+    print("Reddit check:")
+    reddit.checkReddit(name, newFolder)
 scrape(args.name)
