@@ -16,7 +16,12 @@ def getCIAResults(name):
     info = []    
     for ri in result_info_items:
         info.append(ri.text.strip())
-    num_results= int(info.pop(2))
+    
+    test = info.pop(1)
+    if test == name.lower():
+        return pd.DataFrame(columns={'title','date','description','link'})
+    
+    num_results= int(info.pop(1))
     num_pages = int(num_results/10 + (num_results % 10 > 0))
 
 
