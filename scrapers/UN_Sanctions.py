@@ -9,7 +9,7 @@ import pandas as pd
 import re
 
 
-# In[34]:
+# In[2]:
 
 def getUnResults(name):
     search_name1 = name.lower().replace(' ','%7C')
@@ -24,6 +24,10 @@ def getUnResults(name):
 
     for item in item_list:
         text = item.text
+        text = text.replace('\n', '')
+        text = text.replace('\t', '')
+        text = text.replace('\xa0',' ')
+        text = text.replace('click here', '')
         name_index = text.find('Name: 1:')
         if name_index != -1:
             first_name = text[name_index + len('Name: 1:'): text.find('2:')]
@@ -35,7 +39,8 @@ def getUnResults(name):
             full_name = full_name.strip()
             full_name = ' '.join(full_name.split())
             if full_name.lower() == name_lower:
-                return name + ' FOUND in MAS Sanctions List' + " " + sites
+                #return name + ' FOUND in MAS Sanctions List' + " " + sites
+                return text
         else: 
             full_name = text[text.find('Name:')+ len('Name:') : text.find('A.k.a.')]
             full_name = full_name.replace(' na ','')
@@ -43,13 +48,14 @@ def getUnResults(name):
             full_name = full_name.strip()
             full_name = ' '.join(full_name.split())
             if full_name.lower() == name_lower:
-                return name + ' FOUND in MAS Sanctions List' + " " + sites
+                #return name + ' FOUND in MAS Sanctions List' + " " + sites
+                return text
     return name + ' NOT FOUND in MAS Sanctions List'
 
 
-# In[35]:
+# In[3]:
 
-getUnResults("Eric Badege")
+#getUnResults("Eric Badege")
 
 
 # In[ ]:
