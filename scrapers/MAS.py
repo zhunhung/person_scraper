@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 import urllib
 from bs4 import BeautifulSoup
@@ -9,9 +9,10 @@ import pandas as pd
 import re
 
 
-# In[11]:
+# In[16]:
 
 def getMASResults(name):
+    df = pd.DataFrame(columns=['Names','Data'])
     
     name_lower = name.lower()
     dprk = 'https://scsanctions.un.org/en/?keywords=dprk'
@@ -59,8 +60,9 @@ def getMASResults(name):
                 full_name = full_name.strip()
                 full_name = ' '.join(full_name.split())
                 if full_name.lower() ==name_lower:
-                    return text
-                    #return name + ' FOUND in MAS Sanctions List' + " " + sites
+                    df.loc[0] = [name_lower, text]
+                    df.to_csv('mas_results.csv',encoding='utf-8',header=True, index=False)
+                    return name + ' FOUND in MAS Sanctions List' + " " + sites
             else: 
                 full_name = text[text.find('Name:')+ len('Name:') : text.find('A.k.a.')]
                 full_name = full_name.replace(' na ','')
@@ -68,15 +70,16 @@ def getMASResults(name):
                 full_name = full_name.strip()
                 full_name = ' '.join(full_name.split())
                 if full_name.lower() ==name_lower:
-                    return text
-                    #return name + ' FOUND in MAS Sanctions List' + " " + sites
+                    df.loc[0] = [name_lower, text]
+                    df.to_csv('mas_results.csv',encoding='utf-8',header=True, index=False)
+                    return name + ' FOUND in MAS Sanctions List' + " " + sites
     return name + ' NOT FOUND in MAS Sanctions List'
     
 
 
-# In[12]:
+# In[17]:
 
-#getMASResults('NAZIR MOHAMMAD ABDUL BASIR')
+getMASResults('NAZIR MOHAMMAD ABDUL BASIR')
 
 
 # In[ ]:
