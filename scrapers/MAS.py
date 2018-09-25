@@ -11,7 +11,7 @@ import re
 
 # In[16]:
 
-def getMASResults(name):
+def getMASResults(name, folder):
     df = pd.DataFrame(columns=['Names','Data'])
     
     name_lower = name.lower()
@@ -36,7 +36,8 @@ def getMASResults(name):
     list_of_urls.append(yemen)
     list_of_urls.append(al_qaida)
     list_of_urls.append(taliban)
-    
+    fileName = folder + '/' + name.replace(' ', '_') + '_MASResults.csv'
+
     for sites in list_of_urls:
         page = urllib.request.urlopen(sites)
         soup = BeautifulSoup(page, 'html.parser')
@@ -61,8 +62,8 @@ def getMASResults(name):
                 full_name = ' '.join(full_name.split())
                 if full_name.lower() ==name_lower:
                     df.loc[0] = [name_lower, text]
-                    df.to_csv('mas_results.csv',encoding='utf-8',header=True, index=False)
-                    return name + ' FOUND in MAS Sanctions List' + " " + sites
+                    df.to_csv(fileName,encoding='utf-8',header=True, index=False)
+                    print(name + ' FOUND in MAS Sanctions List' + " " + sites)
             else: 
                 full_name = text[text.find('Name:')+ len('Name:') : text.find('A.k.a.')]
                 full_name = full_name.replace(' na ','')
@@ -71,15 +72,13 @@ def getMASResults(name):
                 full_name = ' '.join(full_name.split())
                 if full_name.lower() ==name_lower:
                     df.loc[0] = [name_lower, text]
-                    df.to_csv('mas_results.csv',encoding='utf-8',header=True, index=False)
-                    return name + ' FOUND in MAS Sanctions List' + " " + sites
-    return name + ' NOT FOUND in MAS Sanctions List'
+                    df.to_csv(fileName,encoding='utf-8',header=True, index=False)
+                    print(name + ' FOUND in MAS Sanctions List' + " " + sites)
+    print(name + ' NOT FOUND in MAS Sanctions List')
     
 
 
 # In[17]:
-
-getMASResults('NAZIR MOHAMMAD ABDUL BASIR')
 
 
 # In[ ]:

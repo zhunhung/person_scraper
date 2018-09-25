@@ -11,7 +11,7 @@ import re
 
 # In[8]:
 
-def getUnResults(name):
+def getUnResults(name, folder):
     df = pd.DataFrame(columns=['Names','Data'])
     
     search_name1 = name.lower().replace(' ','%7C')
@@ -23,6 +23,7 @@ def getUnResults(name):
     soup = BeautifulSoup(page, 'html.parser')
 
     item_list = soup.findAll('tr', attrs={'class':'rowtext'})
+    fileName = folder + '/' + name.replace(' ', '_') + '_UNResults.csv'
 
     for item in item_list:
         text = item.text
@@ -43,8 +44,8 @@ def getUnResults(name):
             if full_name.lower() == name_lower:
                 
                 df.loc[0] = [name_lower, text]
-                df.to_csv('un_results.csv',encoding='utf-8',header=True, index=False)
-                return name + ' FOUND in MAS Sanctions List' + " " + sites
+                df.to_csv(fileName,encoding='utf-8',header=True, index=False)
+                print(name + ' FOUND in MAS Sanctions List' + " " + sites)
         else: 
             full_name = text[text.find('Name:')+ len('Name:') : text.find('A.k.a.')]
             full_name = full_name.replace(' na ','')
@@ -54,14 +55,9 @@ def getUnResults(name):
             if full_name.lower() == name_lower:
                 
                 df.loc[0] = [name_lower, text]
-                df.to_csv('un_results.csv',encoding='utf-8',header=True, index=False)
-                return name + ' FOUND in MAS Sanctions List' + " " + sites
-    return name + ' NOT FOUND in MAS Sanctions List'
-
-
-# In[9]:
-
-getUnResults("Eric Badege")
+                df.to_csv(fileName,encoding='utf-8',header=True, index=False)
+                print(name + ' FOUND in MAS Sanctions List' + " " + sites)
+    print(name + ' NOT FOUND in MAS Sanctions List')
 
 
 # In[ ]:
