@@ -5,7 +5,7 @@ Given a name of a person, the scraper will cross check against the following dat
 - [X] OFAC SDN
 - [X] The Panama Papers
 - [X] UN Sanctions
-- [ ] US Sanctions
+- [X] US Sanctions
 - [X] MAS Sanctions and Freezing of assets
 - [X] PEP databases
 - [X] CIA Database
