@@ -49,7 +49,7 @@ pip install python-linkedin
 Here's an example if you want to scrape on "Osama Bin Laden"
 
 ```
-python scrapper.py -n "Osama Bin Laden"
+python scraper.py -n "Osama Bin Laden"
 ```
 
 And the output will be something like this:
@@ -63,8 +63,8 @@ Found 0 matches in Panama Papers
 
 The search results can be found in the results/name folder
 ```
-person-scrapper/
-|-- scrappers/
+person-scraper/
+|-- scrapers/
 |   |-- CSL.py
 |   |-- panama.py
 |
@@ -73,6 +73,6 @@ person-scrapper/
 |   |   |-- Osama_Bin_Laden_CSL.json
 |   |   |-- Osama_Bin_Laden_PanamaPapers.csv
 |
-|-- scrapper.py
+|-- scraper.py
 |-- README
 |-- .gitignore
